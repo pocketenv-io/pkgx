@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 
-dockerd-entrypoint.sh > /dev/null 2> /dev/null &
+sudo dockerd-entrypoint.sh >/dev/null 2>/dev/null &
 
 code -v tunnel
+
