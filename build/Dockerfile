@@ -58,8 +58,8 @@ RUN if [ -n "$PACKAGES" ]; then \
   pkgx install ${PACKAGES};\
   fi
 
-COPY entry.sh entry.sh
+COPY entry.sh /usr/local/bin/entry.sh
 
-RUN chmod a+x entry.sh
+RUN sudo chmod a+x /usr/local/bin/entry.sh
 
-ENTRYPOINT [ "./entry.sh" ]
+ENTRYPOINT [ "entry.sh" ]
