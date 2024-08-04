@@ -14,7 +14,8 @@ RUN rm -f packages.microsoft.gpg
 RUN  apt-get install -y apt-transport-https \
   && apt-get update \
   && apt-get install -y \
-  code 
+  --no-install-recommends \
+  code ca-certificates iptables openssl pigz xz-utils
 
 RUN curl https://pkgx.sh | sh
 
@@ -57,4 +58,8 @@ RUN if [ -n "$PACKAGES" ]; then \
   pkgx install ${PACKAGES};\
   fi
 
-ENTRYPOINT [ "code", "-v", "tunnel" ]
+COPY entry.sh entry.sh
+
+RUN chmod a+x entry.sh
+
+ENTRYPOINT [ "./entry.sh" ]
