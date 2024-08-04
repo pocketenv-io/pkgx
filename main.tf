@@ -31,6 +31,7 @@ resource "docker_container" "base" {
   image = var.context != null ? docker_image.base[0].image_id : docker_image.default[0].image_id
   name  = var.workspace_name
   hostname = var.hostname
+  privileged = true
   
   dynamic "volumes" {
     for_each = var.volumes
