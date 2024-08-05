@@ -13,7 +13,8 @@ pocketenv init -t pkgx
 ## ✨ Features
 
 - Pkgx
-- Ohmyposh
+- Oh-my-posh
 - Atuin
 - Direnv
 - Git
+- Docker
