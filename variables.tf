@@ -39,5 +39,6 @@ variable "volumes" {
   description = "Volumes to mount"
   default = {
     pkgx-workspace = "/home/coder"
+    pkgx-docker-volumes = "/var/lib/docker"
   }
 }
